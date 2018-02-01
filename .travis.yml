@@ -1,0 +1,32 @@
+---
+language: python
+python: 3.6
+
+env:
+  - ANSIBLE_VERSION=2.4.3.0
+
+sudo: required
+
+dist: trusty
+
+services:
+  - docker
+
+cache:
+  - pip
+
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install -o Dpkg::Options::='--force-confold' --force-yes -y docker-ce
+
+install:
+  - pip install "ansible~=$ANSIBLE_VERSION"
+  - pip install docker
+  - pip install 'molecule==2.4.3.0'
+  - ansible --version
+  - molecule --version
+  - molecule create
+  - molecule destroy
+
+script:
+  - molecule test
