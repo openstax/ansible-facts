@@ -22,7 +22,7 @@ before_install:
 install:
   - pip install "ansible~=$ANSIBLE_VERSION"
   - pip install docker
-  - pip install 'molecule==2.4.3.0'
+  - pip install 'molecule==2.7.0'
   - ansible --version
   - molecule --version
   - molecule create
