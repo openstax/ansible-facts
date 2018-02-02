@@ -20,9 +20,7 @@ before_install:
   - sudo apt-get install -o Dpkg::Options::='--force-confold' --force-yes -y docker-ce
 
 install:
-  - pip install "ansible~=$ANSIBLE_VERSION"
-  - pip install docker
-  - pip install 'molecule==2.7.0'
+  - pip install -q -r requirements.txt 
   - ansible --version
   - molecule --version
   - molecule create
