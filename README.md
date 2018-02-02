@@ -1,6 +1,8 @@
 ansible-facts
 =========
 
+[![Build Status](https://travis-ci.org/openstax/ansible-facts.svg?branch=master)](https://travis-ci.org/openstax/ansible-facts)
+
 In the event that the sudo command is not available this role does some basic facts gathering. This allows our various roles to work in different enviornments
 
 Requirements
